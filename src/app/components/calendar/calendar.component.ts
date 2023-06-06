@@ -13,7 +13,7 @@ export class CalendarComponent implements OnInit{
   calendarOptions: CalendarOptions = {
     plugins: [timeGridPlugin],
     initialView: 'timeGridWeek',
-    height: '800px',
+    height: '600px',
     locale: ptBrLocale,
     allDaySlot: false
   };

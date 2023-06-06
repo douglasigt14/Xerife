@@ -1,29 +1,71 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>
-      Xerife Barbearia
-    </mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Agenda</a>
-      <a mat-list-item href="#">Clientes</a>
-      <a mat-list-item href="#">Profissionais</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar class="header">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span></span>
-    </mat-toolbar>
-    <ng-content></ng-content>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<div id="sidebar">
+  <mat-sidenav-container>
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>
+        <div class="content-title">
+            <img class='img'src="assets/logodourada.jpeg" >
+        </div>
+      </mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item href="#">
+          <div><span class="material-icons margin-icon">
+            date_range
+            </span></div> 
+            <div>
+              Agenda
+            </div>
+        </a>
+        <a mat-list-item href="#">
+          <div><span class="material-icons margin-icon">
+            person
+            </span></div> 
+            <div>
+              Clientes
+            </div>
+        </a>
+        <a mat-list-item href="#">
+          <div><span class="material-icons margin-icon">
+            work
+            </span></div> 
+            <div>
+              Profissionais
+            </div>
+        </a>
+        <a mat-list-item href="#">
+          <div><span class="material-icons margin-icon">
+            trending_up
+            </span></div> 
+            <div>
+              Relatorios Financeiros
+            </div>
+        </a>
+        <a mat-list-item href="#">
+          <div><span class="material-icons margin-icon">
+            cake
+            </span></div> 
+            <div>
+              Aniversariantes
+            </div>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar class="header">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span></span>
+      </mat-toolbar>
+         <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
