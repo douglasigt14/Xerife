@@ -14,7 +14,8 @@ export class CalendarComponent implements OnInit, AfterViewInit{
     start: '2023-06-06 10:00:00',
     end: '2023-06-06 10:30:00',
     allDay: false,
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    borderColor: 'black'
   }];
   calendarOptions: CalendarOptions = {
     plugins: [timeGridPlugin],
@@ -31,7 +32,8 @@ export class CalendarComponent implements OnInit, AfterViewInit{
       start: '2023-06-06 12:00:00',
       end: '2023-06-06 13:30:00',
       allDay: false,
-      backgroundColor: 'black'
+      backgroundColor: 'black',
+      borderColor: 'black'
     });
     this.calendarOptions.events = this.events;
   }
