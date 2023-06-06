@@ -7,7 +7,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { HomeComponent } from './home.component';
+import { HomeComponent } from './schedule.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
