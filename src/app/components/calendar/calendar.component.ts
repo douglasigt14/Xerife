@@ -9,14 +9,7 @@ import timeGridPlugin from '@fullcalendar/timegrid'
   styleUrls: ['./calendar.component.scss']
 })
 export class CalendarComponent implements OnInit, AfterViewInit{
-  events = [{
-    title: 'Douglas | Cabelo e Barba',
-    start: '2023-06-06 10:00:00',
-    end: '2023-06-06 10:30:00',
-    allDay: false,
-    backgroundColor: 'black',
-    borderColor: 'black'
-  }];
+  events:any = [];
   calendarOptions: CalendarOptions = {
     plugins: [timeGridPlugin],
     initialView: 'timeGridWeek',
@@ -27,14 +20,25 @@ export class CalendarComponent implements OnInit, AfterViewInit{
   };
 
   ngOnInit(): void {
-    this.events.push({
+    let events = [{
+      title: 'Douglas | Cabelo e Barba',
+      start: '2023-06-06 10:00:00',
+      end: '2023-06-06 10:30:00',
+      allDay: false,
+      backgroundColor: 'black',
+      borderColor: 'black'
+    },
+    {
       title: 'Cliedy | Sombrancelha',
       start: '2023-06-06 12:00:00',
       end: '2023-06-06 13:30:00',
       allDay: false,
       backgroundColor: 'black',
       borderColor: 'black'
-    });
+    }
+  ];
+
+    this.events.push(...events);
     this.calendarOptions.events = this.events;
   }
 
