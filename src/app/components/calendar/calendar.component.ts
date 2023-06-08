@@ -1,7 +1,7 @@
 import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/core'; 
 import ptBrLocale from '@fullcalendar/core/locales/pt-br'; // useful for typechecking
-import timeGridPlugin from '@fullcalendar/timegrid'
+import timeGridPlugin from '@fullcalendar/timegrid';
 
 @Component({
   selector: 'app-calendar',
@@ -45,7 +45,5 @@ export class CalendarComponent implements OnInit, AfterViewInit{
   ngAfterViewInit(): void {
     
   }
-
-
 
 }
