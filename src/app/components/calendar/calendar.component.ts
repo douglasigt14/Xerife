@@ -45,5 +45,4 @@ export class CalendarComponent implements OnInit, AfterViewInit{
   ngAfterViewInit(): void {
     
   }
-
 }
