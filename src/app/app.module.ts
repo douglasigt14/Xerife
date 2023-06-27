@@ -12,20 +12,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { HomeComponent } from './schedule/schedule.component';
+import { HomeComponent } from './pages/schedule/schedule.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ClientsComponent } from './pages/clients/clients.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     HomeComponent,
-    CalendarComponent
+    CalendarComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     MatCardModule,
     MatMenuModule,
     FullCalendarModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

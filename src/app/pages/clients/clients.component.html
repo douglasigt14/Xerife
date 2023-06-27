@@ -1,0 +1,14 @@
+<div class="grid-container">
+    <h1 class="mat-h1 title">Clientes</h1>
+    <mat-grid-list cols="2">
+      <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols">
+        <mat-card class="card-conteiner">
+          <mat-card-header>
+          </mat-card-header>
+          <mat-card-content class="card-content">
+            <div></div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>

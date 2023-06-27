@@ -1,15 +1,13 @@
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
+import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-clients',
+  templateUrl: './clients.component.html',
+  styleUrls: ['./clients.component.scss']
 })
-export class AppComponent {
-  title = 'xerife';
-
+export class ClientsComponent {
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(() => {
       return [
