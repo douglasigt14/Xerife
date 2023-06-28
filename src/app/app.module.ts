@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { HomeComponent } from './pages/schedule/schedule.component';
+import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -26,15 +26,17 @@ import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http'; // Importe o HttpClientModule
 import { ReactiveFormsModule } from '@angular/forms'; // Importe o ReactiveFormsModule
 import { MatInputModule } from '@angular/material/input';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    HomeComponent,
+    ScheduleComponent,
     CalendarComponent,
     ClientsComponent,
-    LoginComponent
+    LoginComponent,
+    AdminLayoutComponent
   ],
   imports: [
     BrowserModule,

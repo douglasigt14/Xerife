@@ -9,7 +9,7 @@ import { map } from 'rxjs';
 })
 export class AppComponent {
   title = 'xerife';
-
+  is_auth:boolean = true; 
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(() => {
       return [

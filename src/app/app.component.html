@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+
+
+<router-outlet *ngIf="!is_auth"></router-outlet>
+
+<app-admin-layout  *ngIf="is_auth"></app-admin-layout>
+
