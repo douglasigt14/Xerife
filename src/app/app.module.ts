@@ -20,6 +20,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ClientsComponent } from './pages/clients/clients.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { ClientsComponent } from './pages/clients/clients.component';
     MatCardModule,
     MatMenuModule,
     FullCalendarModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
