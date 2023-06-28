@@ -6,28 +6,30 @@
           <mat-card-header>
           </mat-card-header>
           <mat-card-content class="card-content">
-            <div>
-                  
+            <div class="table-container">
+               
+               
+
                 <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                     <!-- Definição das colunas da tabela -->
                     <ng-container matColumnDef="position">
-                      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-                      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+                      <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
+                      <mat-cell *matCellDef="let item"> {{item.position}} </mat-cell>
                     </ng-container>
                   
                     <ng-container matColumnDef="name">
-                      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                      <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+                      <mat-cell *matCellDef="let item"> {{item.name}} </mat-cell>
                     </ng-container>
                   
                     <ng-container matColumnDef="weight">
-                      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-                      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+                      <mat-header-cell *matHeaderCellDef> Sobrenome </mat-header-cell>
+                      <mat-cell *matCellDef="let item"> {{item.weight}} </mat-cell>
                     </ng-container>
                   
                     <ng-container matColumnDef="symbol">
-                      <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-                      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+                      <mat-header-cell *matHeaderCellDef> Aniversario </mat-header-cell>
+                      <mat-cell *matCellDef="let item"> {{item.symbol}} </mat-cell>
                     </ng-container>
                   
                     <!-- Linha de cabeçalho da tabela -->
@@ -36,8 +38,10 @@
                     <!-- Linhas de dados da tabela -->
                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
                   </mat-table>
-                  
-                  <mat-paginator  [length]="totalCount" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPageChange($event)" showFirstLastButtons></mat-paginator>
+                  <div class="paginator-content">
+                    <mat-paginator  [length]="totalCount" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPageChange($event)" showFirstLastButtons></mat-paginator>
+                </div>
+                 
             </div>
           </mat-card-content>
         </mat-card>

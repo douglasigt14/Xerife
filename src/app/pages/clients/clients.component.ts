@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs';
 import { ClientsService } from 'src/app/services/clients.service';
@@ -19,7 +19,7 @@ import { MatTableDataSource } from '@angular/material/table';
     dataSource:any = [];
     items: any[] = [];
     totalCount: number = 0;
-    pageSize: number = 5;
+    pageSize: number = 10;
     pageSizeOptions: number[] = [5, 10, 25, 100];
 
     cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(

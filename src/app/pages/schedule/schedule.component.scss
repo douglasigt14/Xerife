@@ -1,5 +1,6 @@
 .grid-container {
   margin: 20px;
+  margin-bottom: 0;
 }
 
 .card-conteiner {
@@ -25,5 +26,5 @@
   font-weight: normal !important;
 }
 .list-schedules{
-  height: calc(100vh - 180px);
+  height: calc(100vh - 100px);
 }
