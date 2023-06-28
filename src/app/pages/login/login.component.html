@@ -1,0 +1,18 @@
+<div class="conteiner-login">
+    <div class="content-login">
+           
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="content-form">
+                     <p class="title-login">Login</p>
+                <mat-form-field>
+                <input matInput placeholder="Email" type="email" formControlName="email" required>
+                </mat-form-field>
+                <mat-form-field>
+                <input matInput placeholder="Senha" type="password" formControlName="password" required >
+                </mat-form-field>
+                <button  type="submit" mat-raised-button style="background-color: #CC7A1E;">Entrar</button>
+            </div>
+            </form>
+            <div *ngIf="error" class="error">{{ error }}</div>
+      </div>
+</div>

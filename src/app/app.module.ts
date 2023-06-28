@@ -22,6 +22,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ClientsComponent } from './pages/clients/clients.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { LoginComponent } from './pages/login/login.component';
+import { HttpClientModule } from '@angular/common/http'; // Importe o HttpClientModule
+import { ReactiveFormsModule } from '@angular/forms'; // Importe o ReactiveFormsModule
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { MatSortModule } from '@angular/material/sort';
     SidebarComponent,
     HomeComponent,
     CalendarComponent,
-    ClientsComponent
+    ClientsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,10 @@ import { MatSortModule } from '@angular/material/sort';
     FullCalendarModule,
     MatPaginatorModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
