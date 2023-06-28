@@ -9,6 +9,7 @@
             <div>
                   
                 <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <!-- Definição das colunas da tabela -->
                     <ng-container matColumnDef="position">
                       <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
                       <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
@@ -29,13 +30,14 @@
                       <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
                     </ng-container>
                   
+                    <!-- Linha de cabeçalho da tabela -->
                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  
+                    <!-- Linhas de dados da tabela -->
                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
                   </mat-table>
                   
-                  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-
-                 <!--  <mat-paginator [length]="totalCount" [pageSize]="pageSize" (page)="onPageChange($event)"></mat-paginator> -->
+                  <mat-paginator  [length]="totalCount" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPageChange($event)" showFirstLastButtons></mat-paginator>
             </div>
           </mat-card-content>
         </mat-card>

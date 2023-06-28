@@ -4,7 +4,6 @@ import { map } from 'rxjs';
 import { ClientsService } from 'src/app/services/clients.service';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-clients',
@@ -14,10 +13,14 @@ import { MatSort } from '@angular/material/sort';
 
   export class ClientsComponent {
 
-    constructor(private breakpointObserver: BreakpointObserver) {}
+    constructor(private breakpointObserver: BreakpointObserver, private clientsSerive: ClientsService) {}
     
     displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-    dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
+    dataSource:any = [];
+    items: any[] = [];
+    totalCount: number = 0;
+    pageSize: number = 5;
+    pageSizeOptions: number[] = [5, 10, 25, 100];
 
     cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
       map(() => {
@@ -30,23 +33,22 @@ import { MatSort } from '@angular/material/sort';
     @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   
     ngAfterViewInit() {
+      this.loadData(1);
+    }
+
+    loadData(page: number):void {
+      this.items = this.clientsSerive.getData(page, this.pageSize);
+      this.totalCount = this.clientsSerive.getTotalCount();
+      this.dataSource = new MatTableDataSource<any>(this.items);
+
       this.dataSource.paginator = this.paginator;
+    }
+
+
+    onPageChange(event: PageEvent) {
+      const currentPage = event.pageIndex + 1;
+      this.pageSize = event.pageSize;
+      this.loadData(currentPage);
     }
   }
   
-  export interface Element {
-    name: string;
-    position: number;
-    weight: number;
-    symbol: string;
-  }
-  
-  const ELEMENT_DATA: Element[] = [
-    { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-    { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-    { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-    { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-    { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-    { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-    // adicione mais dados aqui, se necessário
-  ];
